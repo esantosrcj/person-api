@@ -46,3 +46,13 @@ router.get('/verified-drinkers-with-last-name/:lastName', async (req, res) => {
         .return.all();
     res.send(persons);
 });
+
+router.get('/with-statement-containing/:text', async (req, res) => {
+    const text = req.params.text;
+    const persons = await personRepository
+        .search()
+        .where('personalStatement')
+        .matches(text)
+        .return.all();
+    res.send(persons);
+});

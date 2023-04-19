@@ -12,6 +12,8 @@ const personSchema = new Schema(Person, {
     location: { type: 'point' },
     locationUpdated: { type: 'date' },
     skills: { type: 'string[]' },
+    // If you have defined a field with a type of 'text' in your schema,
+    // you can perform full-text searches against it
     personalStatement: { type: 'text' },
 });
 
