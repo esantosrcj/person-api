@@ -24,7 +24,7 @@ paths:
               allOf:
                 - $ref: "#/components/schemas/person"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -43,7 +43,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/id"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -69,7 +69,7 @@ paths:
               allOf:
                 - $ref: "#/components/schemas/person"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -78,15 +78,15 @@ paths:
                   - $ref: "#/components/schemas/person_id"
                   - $ref: "#/components/schemas/person"
     delete:
-      tags: 
-         - Person
+      tags:
+        - Person
       description: Deletes the person by ID
       summary: Delete person
       operationId: removePerson
       parameters:
         - $ref: "#/components/parameters/id"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -102,7 +102,7 @@ paths:
       summary: Get all persons
       operationId: fetchAllPersons
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -120,7 +120,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/last_name"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -136,7 +136,7 @@ paths:
       summary: Get persons of drinking age
       operationId: fetchDrinkingPersons
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -152,7 +152,7 @@ paths:
       summary: Get non-verified persons
       operationId: fetchNonVerifiedPersons
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -170,7 +170,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/last_name"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -188,7 +188,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/text"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -208,7 +208,7 @@ paths:
         - $ref: "#/components/parameters/latitude"
         - $ref: "#/components/parameters/radius"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -218,7 +218,7 @@ paths:
 
   /person/{id}/location/{longitude},{latitude}:
     patch:
-      tags: 
+      tags:
         - Location
       description: Updates the person's location
       summary: Update person's location
@@ -228,7 +228,7 @@ paths:
         - $ref: "#/components/parameters/longitude"
         - $ref: "#/components/parameters/latitude"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
