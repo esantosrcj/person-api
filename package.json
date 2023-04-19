@@ -1,7 +1,7 @@
 {
-  "name": "redis-om-express",
+  "name": "person-api",
   "version": "1.0.0",
-  "description": "Started code for Redis OM + Express workshop.",
+  "description": "API built using Node.js and Redis Stack.",
   "type": "module",
   "scripts": {
     "start": "nodemon server.js"
