@@ -47,6 +47,7 @@ router.get('/verified-drinkers-with-last-name/:lastName', async (req, res) => {
     res.send(persons);
 });
 
+// Full-text search
 router.get('/with-statement-containing/:text', async (req, res) => {
     const text = req.params.text;
     const persons = await personRepository
@@ -54,5 +55,20 @@ router.get('/with-statement-containing/:text', async (req, res) => {
         .where('personalStatement')
         .matches(text)
         .return.all();
+    res.send(persons);
+});
+
+// Searching the globe
+router.get('/near/:lng,:lat/radius/:radius', async (req, res) => {
+    const longitude = Number(req.params.lng);
+    const latitude = Number(req.params.lat);
+    const radius = Number(req.params.radius);
+
+    const persons = await personRepository
+        .search()
+        .where('location')
+        .inRadius((circle) => circle.longitude(longitude).latitude(latitude).radius(radius).miles)
+        .return.all();
+
     res.send(persons);
 });
