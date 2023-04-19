@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Redis OM and Express Skeleton API
+  title: Person API
   description: >
     A simple sample API that shows assorted ways to use Redis OM for
     Node.js with an Express applciation.
